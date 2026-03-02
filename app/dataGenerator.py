@@ -78,17 +78,6 @@ def add_h3_index(df: pl.DataFrame, level: int) -> pl.DataFrame:
     )
 
 def insert_batch_with_retry(client, table_name, data, column_names=None, max_retries=5, base_wait=180):
-    """
-    Insert batch ke ClickHouse dengan retry dan exponential backoff.
-
-    Args:
-        client: clickhouse_connect client
-        table_name: nama table
-        data: list of rows
-        column_names: nama kolom
-        max_retries: jumlah maksimal retry
-        base_wait: waktu tunggu awal (detik), akan double tiap retry
-    """
     attempt = 0
 
     while attempt < max_retries:
@@ -108,7 +97,7 @@ def insert_batch_with_retry(client, table_name, data, column_names=None, max_ret
 
 def main():
     time.sleep(10)
-    
+
     client = get_client(
         host="clickhouse",
         port=8123,
