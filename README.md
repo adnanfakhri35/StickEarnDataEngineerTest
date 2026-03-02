@@ -22,7 +22,7 @@ docker --version
 2. Clone this repository:
 
 ```bash
-git clone https://github.com/adnanfakhri35/StickEarn_DataEngineer_Test
+git clone https://github.com/adnanfakhri35/StickEarnDataEngineerTest
 cd StickEarn_DataEngineer_Test
 ```
 
