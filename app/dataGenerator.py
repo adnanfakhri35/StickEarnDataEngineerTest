@@ -107,7 +107,8 @@ def insert_batch_with_retry(client, table_name, data, column_names=None, max_ret
 
 
 def main():
-
+    time.sleep(10)
+    
     client = get_client(
         host="clickhouse",
         port=8123,
